@@ -1,0 +1,14 @@
+{
+  "name": "balidea_theme",
+  "version": "1.0.0",
+  "description": "balidea package",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass --watch scss/style.scss -o dist/css/"
+  },
+  "author": "julian.castano",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  }
+}

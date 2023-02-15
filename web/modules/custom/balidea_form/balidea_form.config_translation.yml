@@ -1,0 +1,5 @@
+balidea_form.config:
+  title: 'Configuration translation Balidea form'
+  base_route_name: balidea_form.config
+  names:
+    - 'balidea_form.adminsettings'

@@ -1,0 +1,15 @@
+name: Balidea
+type: theme
+base theme: classy
+description: 'Base theme for Balidea'
+core_version_requirement: ^8 || ^9
+screenshot: screenshot.png
+libraries:
+    - balidea_theme/global
+regions:
+   header: 'Header'
+   primary_menu: 'Primary Menu'
+   breadcrumb: 'Breadcrumb'
+   highlighted: 'Highlighted'
+   content: 'Content'
+   footer: 'Footer'

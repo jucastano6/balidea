@@ -1,0 +1,6 @@
+balidea_form.config:
+  title: 'Balidea form'
+  route_name: balidea_form.config
+  description: 'balidea form'
+  parent: system.admin
+  weight: -100

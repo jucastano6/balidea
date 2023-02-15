@@ -1,0 +1,9 @@
+balidea_form.adminsettings_tab:
+  route_name: balidea_form.config
+  title: Settings
+  base_route: balidea_form.config
+balidea_form.adminsettings_user:
+  route_name: balidea_form.custom_form
+  title: View form
+  base_route: balidea_form.config
+

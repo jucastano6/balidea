@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * This is the Balideas installer to create a custom link.
+ */
+
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+
+/**
+ * Implements hook_install().
+ */
+function balidea_form_install() {
+  // Create a custom link to access balidea's form.
+  $menu_link = MenuLinkContent::create([
+    'title' => t('Balidea Form'),
+    'link' => ['uri' => 'route:balidea_form.custom_form'],
+    'menu_name' => 'main',
+    'expanded' => TRUE,
+    'weight' => -100,
+  ]);
+  $menu_link->save();
+}

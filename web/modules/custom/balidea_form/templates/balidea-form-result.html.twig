@@ -1,0 +1,14 @@
+{% set final_text = {
+  '#type':   'processed_text',
+  '#text':    data.text.value|t,
+  '#format':  data.text.format,
+} %}
+<section class="balider-form-wrapper">
+<h3>{{ 'Welcome to Balidea form' |t  }}</h3>
+<div class="balider-form-content">
+<p>{{ 'Informative text:'|t }}</p>
+{{ final_text }}
+<p>{{ 'Integer:'|t }}</p>
+{{ data.number }}
+</div>
+</section>

@@ -1,0 +1,11 @@
+name: Balidea Form
+type: module
+description: Generates a custom form to test technician knowledge
+package: Balidea
+core_version_requirement: ^9 || ^10
+dependencies:
+  - drupal:language
+  - drupal:locale
+  - drupal:config_translation
+'interface translation project': balidea_form
+'interface translation server pattern': modules/custom/balidea_form/translations/%language.po

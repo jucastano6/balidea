@@ -1,0 +1,9 @@
+global:
+  css:
+    base:
+      dist/css/style.css: {}
+  js:
+    dist/js/main.js: {}
+  dependencies:
+    - core/jquery
+    - core/once

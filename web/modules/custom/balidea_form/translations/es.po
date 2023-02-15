@@ -1,0 +1,44 @@
+msgid "Balidea Form"
+msgstr "Formulario Balidea"
+
+msgid "you must be logged in to the server"
+msgstr "Debe estar logueado en el servidor"
+
+msgid "Please type your informative text"
+msgstr "Por favor ingrese su texto informativo"
+
+msgid "Welcome to Balidea form"
+msgstr "Bienvenido al formulario Balidea"
+
+msgid "Please type an integer number"
+msgstr "Por favor ingrese un número entero"
+
+msgid "Send"
+msgstr "Enviar"
+
+msgid "Your number is a valid integer"
+msgstr "Su número es un entero válido"
+
+msgid "Your number isn't a valid integer"
+msgstr "Su número no es un entero válido"
+
+msgid "Your text is valid"
+msgstr "Su texto es válido"
+
+msgid "Your text isn't valid"
+msgstr "Su texto no es válido"
+
+msgid "The information has been saved"
+msgstr "La información se ha guardado"
+
+msgid "Please correct the information and try again"
+msgstr "Por favor corrija la información e intente de nuevo"
+
+msgid "Informative text:"
+msgstr "Texto informativo"
+
+msgid "Integer number:"
+msgstr "Número entero"
+
+msgid "Click to see sitename"
+msgstr "Click para ver el nombre del sitio"

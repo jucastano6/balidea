@@ -1,0 +1,15 @@
+balidea_form.custom_form:
+  path: '/config/balidea-form'
+  defaults:
+    _title: 'Balidea Form'
+    _controller: '\Drupal\balidea_form\Controller\BalideaFormController::build'
+  requirements:
+    _user_is_logged_in: '1'
+
+balidea_form.config:
+  path: '/admin/config/balidea-form'
+  defaults:
+    _form: '\Drupal\balidea_form\Form\BalideaForm'
+    _title: 'Balidea form'
+  requirements:
+    _permission: 'balidea form edit'

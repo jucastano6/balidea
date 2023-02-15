@@ -1,0 +1,8 @@
+balidea_form.adminsettings:
+  type: config_object
+  label: 'Balidea config form'
+  mapping:
+    custom_html:
+      type: text_format
+    custom_number:
+      type: integer
