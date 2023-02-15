@@ -17,9 +17,10 @@ class BalideaFormController extends ControllerBase {
 
     $build = [
       '#theme' => 'balidea-form-result',
-      '#data' => ['text' => $formConfig->get('custom_html'),
-      'number' => $formConfig->get('custom_number')
-    ],
+      '#data' => [
+        'text' => $formConfig->get('custom_html'),
+        'number' => $formConfig->get('custom_number'),
+      ],
     ];
 
     return $build;

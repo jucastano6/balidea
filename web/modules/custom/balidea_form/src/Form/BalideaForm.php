@@ -55,8 +55,6 @@ class BalideaForm extends ConfigFormBase {
       '#suffix' => '<p class="result-balidea"></p>',
     ];
 
-
-
     return $form;
   }
 
