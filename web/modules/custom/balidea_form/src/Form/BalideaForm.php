@@ -30,8 +30,11 @@ class BalideaForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    $form = parent::buildForm($form, $form_state);
+
     $form['custom_html'] = [
       '#type' => 'text_format',
+      '#title' => $this->t('Custom Text'),
       '#description' => $this->t('Please type your informative text'),
       '#format' => $this->config('balidea_form.adminsettings')->get('custom_html')['format'],
       '#rows' => 6,
@@ -41,74 +44,38 @@ class BalideaForm extends ConfigFormBase {
 
     $form['custom_number'] = [
       '#type' => 'number',
+      '#title' => $this->t('Custom Number'),
       '#description' => $this->t('Please type an integer number'),
       '#default_value' => $this->config('balidea_form.adminsettings')->get('custom_number'),
       '#suffix' => '<p class="item-number"></p>',
     ];
 
-    $form['actions'] = [
-      '#type' => 'button',
-      '#value' => $this->t('Send'),
-      '#ajax' => [
-        'callback' => '::sendData',
-      ],
-      '#suffix' => '<p class="result-balidea"></p>',
-    ];
-
     return $form;
   }
 
-  /**
-   * Collect and process the form data.
+   /**
+   * {@inheritdoc}
    */
-  public function sendData(array &$form, FormStateInterface $form_state) {
-
-    $custom_html = $form_state->getValue('custom_html')['value'];
+  public function validateForm(array &$form, FormStateInterface $form_state) {
     $custom_number = $form_state->getValue('custom_number');
-
-    $response = new AjaxResponse();
-    $error = 0;
-    $msg = $this->t('Your number is a valid integer');
+    // Check if every characters of custom_number are digits.
     if (!ctype_digit($custom_number)) {
-      $msg = $this->t("Your number isn't a valid integer");
-      $error = 1;
+      $form_state->setErrorByName('custom_number', $this->t('Please type a valid integer number'));
     }
-
-    $response->addCommand(
-          new HtmlCommand('.item-number', $msg)
-    );
-    $msg = $this->t('Your text is valid');
-    if ($custom_html == "") {
-      $msg = $this->t("Your text isn't valid");
-      $error = 1;
-    }
-
-    $response->addCommand(
-      new HtmlCommand('.item-html', $msg)
-    );
-
-    if (!$error) {
-      $this->config('balidea_form.adminsettings')
-        ->set('custom_html', $form_state->getValue('custom_html'))
-        ->set('custom_number', $form_state->getValue('custom_number'))
-        ->save();
-      $msg = $this->t('The information has been saved');
-    }
-    else {
-      $msg = $this->t('Please correct the information and try again');
-    }
-
-    $response->addCommand(
-      new HtmlCommand('.result-balidea', $msg)
-    );
-
-    return $response;
   }
 
   /**
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    // Get the editable config.
+    $settings = $this->configFactory->getEditable('balidea_form.adminsettings');
+    // Set form values.
+    $settings
+      ->set('custom_html', $form_state->getValue('custom_html'))
+      ->set('custom_number', $form_state->getValue('custom_number'))
+      ->save();
+    $this->messenger()->addStatus('The information has been saved.');
   }
 
 }
